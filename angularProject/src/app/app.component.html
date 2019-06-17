@@ -1,0 +1,19 @@
+<h3>Un contador medio boludo </h3>
+
+<!-- El [count] controla el valor inicial de la variable con el decorador @Input -->
+<!-- Del lado derecho del corchete se pueden poner también expresiones -->
+<span>Este Este contador esta "hermanado" con el tercer contador</span><br/>
+<counter (evtPlus)="onFirstPlusClicked($event)"></counter><br/>
+<br/>
+<span>Este contador es el step del tercer contador</span><br/>
+<counter (evtPlus)="onSecondPlusClicked($event)"></counter><br/>
+<br/>
+<span>El tercer contador</span><br/>
+<counter [count]="counterVale" [step]="stepValue"></counter><br/>
+<br/>
+<br/>
+
+
+<span>Este elemento va a mostrar visualmente el valor del 1er contador</span>
+<br/>
+<fancy-counter [amount]=0></fancy-counter>
