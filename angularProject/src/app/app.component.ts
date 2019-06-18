@@ -8,17 +8,25 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angularProject';
 
-  public counterVale;
+  public counterValue;
   public stepValue;
+  public counterText;
 
-  onFirstPlusClicked(value){
-  	console.log("Click1 -- " + value);
-  	this.counterVale = value;
+  onFirstCounterClicked(value) {
+    console.log('Click1 -- ' + value);
+    this.counterValue = value;
+    this.counterText = '';
+    for (let i = 0; i < this.counterValue; i++ ) {
+      this.counterText += '-';
+    }
   }
 
-  onSecondPlusClicked(value){
-  	console.log("Click2 -- " + value);
-  	this.stepValue = value;
+  onSecondCounterClicked(value) {
+    console.log('Click2 -- ' + value);
+    this.stepValue = value;
   }
 
+  onThirdCounterChange(value) {
+    console.log('Cambia el 3ero: ' + value);
+  }
 }

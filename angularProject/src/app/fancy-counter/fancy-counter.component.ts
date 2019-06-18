@@ -7,18 +7,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class FancyCounterComponent implements OnInit {
 
-	@Input() amount = "";
+  @Input() counterText = '';
 
+  constructor() { }
 
-	changeAmount(value){
-		for(var i=0; i<value; i++){
-			this.amount += "-";
-		}
-	}
-
-	constructor() { }
-
-	ngOnInit() {
-	}
+  ngOnInit() {
+  }
 
 }

@@ -7,29 +7,28 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class CounterComponent implements OnInit {
 
-	// El decorador @Imput permite que se tome un valor "por parámtero" para la variable
-	// Si se le pone igual a la variable con @Imput, es el valor por defecto
-	// Los inputs los toma desde el HTML, poniendo [count]=... dentro del componente
-	// Las variables que se tengann que usar después en el HTML tienen que ser public
-	@Input() count = 0;
-	@Input() step = 1;
+  // El decorador @Input permite que se tome un valor "por parámetro" para la variable
+  // Si se le pone igual a la variable con @Input, es el valor por defecto
+  // Los inputs los toma desde el HTML, poniendo [count]=... dentro del componente
+  // Las variables que se tengan que usar después en el HTML tienen que ser public
+  @Input() count = 0;
+  @Input() step = 1;
 
-	@Output() evtPlus = new EventEmitter();
-	@Output() evtMinus = new EventEmitter();
+  @Output() evtChangeValue = new EventEmitter();
 
-	constructor() { }
+  constructor() { }
 
-	onPlusClick(){
-		this.count += this.step;
-		this.evtPlus.emit(this.count);
-	}
+  onPlusClick() {
+    this.count += this.step;
+    this.evtChangeValue.emit(this.count);
+  }
 
-	onMinusClick(){
-		this.count -= this.step;
-		this.evtPlus.emit(this.count);
-	}
+  onMinusClick() {
+    this.count -= this.step;
+    this.evtChangeValue.emit(this.count);
+  }
 
-	ngOnInit() {
-	}
+  ngOnInit() {
+  }
 
 }
