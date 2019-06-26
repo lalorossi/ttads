@@ -1,0 +1,18 @@
+<input type="text" [(ngModel)]="currentItem.description" (keyup)="enterKey($event)" autofocus>
+
+<button (click)="addItem()">+</button>
+<table>
+  <tr *ngFor="let item of items; let i = index" [class.completed]="item.done">
+    <td>{{item.date}}</td>
+    <td>{{item.description}}</td>
+    <td *ngIf="!item.done"
+        style="background-color: green;">
+        <button (click)="completeTask(i)"><i class="fas fa-check"></i></button>
+    </td>
+    <td *ngIf="!item.done"
+      style="background-color: orangered;">
+        <button  (click)="deleteItem(i)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+    </td>
+  </tr>
+</table>
+
